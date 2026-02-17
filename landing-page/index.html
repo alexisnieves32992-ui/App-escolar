@@ -490,6 +490,26 @@
                 header.classList.add('py-3');
             }
         });
+
+        // --- TELEMETRÍA DE ADQUISICIÓN ---
+        // Funcción para registrar descargas
+        const trackDownload = (version) => {
+            console.log('Evento: Intento de descarga detectado - ' + version);
+            // Si el usuario añade Google Analytics, esto lo registraría así:
+            if (window.gtag) {
+                gtag('event', 'download_click', {
+                    'version': version,
+                    'event_category': 'engagement'
+                });
+            }
+        };
+
+        // Escuchar clics en todos los enlaces de descarga
+        document.querySelectorAll('a[download]').forEach(link => {
+            link.addEventListener('click', () => {
+                trackDownload(link.getAttribute('download'));
+            });
+        });
     </script>
 </body>
 

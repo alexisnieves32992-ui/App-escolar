@@ -12,11 +12,23 @@ import { registerPlugin, Capacitor } from '@capacitor/core';
 import { ScreenOrientation } from '@capacitor/screen-orientation';
 import SplashScreen from './components/SplashScreen';
 
+import { FirebaseAnalytics } from '@capacitor-community/firebase-analytics';
+
 // Register custom NavBar plugin using Capacitor's official API
 interface NavBarPlugin {
     setColor(options: { color: string }): Promise<void>;
 }
 const NavBar = registerPlugin<NavBarPlugin>('NavBar');
+
+// Helper for Analytics
+const trackScreen = async (viewName: string) => {
+    try {
+        await FirebaseAnalytics.setScreenName({ screenName: viewName });
+        console.log(`Analytics: Screen viewed - ${viewName}`);
+    } catch (e) {
+        console.warn('Analytics not available');
+    }
+};
 
 
 export const DEFAULT_SUBJECTS: Subject[] = [
@@ -263,6 +275,8 @@ function App() {
             const panels = carouselRef.current.querySelectorAll('.overflow-y-auto');
             panels.forEach(panel => panel.scrollTop = 0);
         }
+        // Track screen view
+        trackScreen(currentView);
     }, [currentView]);
 
     // Persistence Effects

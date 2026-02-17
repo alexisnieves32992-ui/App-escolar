@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "452181666306",
+    "project_id": "app-escolar-d1c75",
+    "storage_bucket": "app-escolar-d1c75.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:452181666306:android:f547e8e006774d09b4951b",
+        "android_client_info": {
+          "package_name": "com.antigravity.escuela"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWGG8Wg245fui42zsAvnuiweS4LozuYNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
