@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruta Académica</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(180deg, #F3EBFF 0%, #E0F7FA 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Custom utility for the text stroke effect in headers */
+    .text-stroke-title {
+      -webkit-text-stroke: 4px #A665E0;
+      /* Fallback/Base */
+      paint-order: stroke fill;
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hide scrollbar for clean mobile look */
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    /* --- Custom Animations --- */
+
+    /* 1. Fade In Up (for lists and cards) */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    /* 2. Scale In (for modals and popups) */
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    /* 3. Pulse Glow (for key actions) */
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(196, 132, 246, 0.4);
+        transform: scale(1);
+      }
+
+      50% {
+        box-shadow: 0 0 20px 0 rgba(196, 132, 246, 0.7);
+        transform: scale(1.02);
+      }
+    }
+
+    .animate-pulse-glow {
+      animation: pulseGlow 2s infinite;
+    }
+
+    /* Staggered animation delays for lists */
+    .stagger-1 {
+      animation-delay: 0.05s;
+    }
+
+    .stagger-2 {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-3 {
+      animation-delay: 0.15s;
+    }
+
+    .stagger-4 {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-5 {
+      animation-delay: 0.25s;
+    }
+  </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
